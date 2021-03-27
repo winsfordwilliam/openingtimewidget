@@ -1,4 +1,6 @@
 # openingtimewidget
+
+#### NOT CURRENTLY COMPLETE! ######
 Widget to display whether a business is open or closed depending on data in a database
 
 This program pulls information from the SQLite database opeingtime.db.
