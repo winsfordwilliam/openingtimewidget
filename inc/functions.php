@@ -34,16 +34,20 @@ function openingTime(){
 }
 
 function displayOpening(){
+    $currentTime = date('h:i');
     $times = openingTime();
     //open
-    if(date('h:i')> $times['opening'] && date('h:i')< $times['closing']){
-        if(date('h:i')< $times['closing'] && date('h:i', '-10 minutes')< $times['closing']){
+    if(empty($times['opening'])||empty($times['closing'])){
+        return 'Closed';
+    }
+    if($currentTime> $times['opening'] && $currentTime< $times['closing']){
+        if($currentTime< $times['closing'] && date('h:i', '-10 minutes')< $times['closing']){
             return "Closing Soon";
         }else{
             return "Open";
         }
     }else{
-        if(date('h:i')< $times['opening'] && date('h:i', '-10 minutes')< $times['opeing']){
+        if($currentTime< $times['opening'] && date('h:i', '-10 minutes')< $times['opeing']){
             return "Opening Soon";
         }else{
         return "Closed";
