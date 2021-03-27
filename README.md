@@ -2,7 +2,7 @@
 Widget to display whether a business is open or closed depending on data in a database
 
 This program pulls information from the SQLite database opeingtime.db.
-This holds the random opening times for Monday to Friday.
+This holds the random opening times for Monday to Sunday.
 
 The conneciton.php file established a link between the php files and the database. This is then shared inside of the functions.php file. Which pulls the data using the sql queries.
 This data is then assessed using if statements to see whether the store is currently open or closed and will display that to the screen.
