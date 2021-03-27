@@ -40,7 +40,7 @@ function displayOpening(){
     if(empty($times['opening'])||empty($times['closing'])){
         return 'Closed';
     }
-    if($currentTime> $times['opening'] && $currentTime< $times['closing']){
+    if($currentTime > $times['opening'] && $currentTime < $times['closing']){
         if($currentTime< $times['closing'] && date('h:i', '-10 minutes')< $times['closing']){
             return "Closing Soon";
         }else{
