@@ -1,6 +1,6 @@
 <?php
 include('inc/functions.php');
-
-echo displayOpening();
+var_dump(openingTime());
+var_dump(displayOpening());
 
 ?>
