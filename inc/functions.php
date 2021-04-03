@@ -34,14 +34,19 @@ function openingTime(){
 }
 
 function displayOpening(){
-    $currentTime = date("h:i");
+    $currentTime = strtotime(date("h:i"));
     $times = openingTime();
-    $opening = strtotime($times[0]['opening']);
-    $closing = strtotime($times[1]['closing']);
+    $opening = date("H:i",strtotime($times[0]['opening'])); 
+    $closing = date('H:i',strtotime($times[1]['closing']));
+sleep(5);
     //open
-    if($currentTime > $opening && $currentTime < $closing){
-            return "Open";
+    try{
+    if($currentTime >= $opening && $currentTime <= $closing){
+            return 'Open';
     }else{
-        return "Closed";
+        return var_dump($opening, $closing, $currentTime);
         }
+    }catch(Exception $e){
+        echo $e -> getMessage();
     }
+}
