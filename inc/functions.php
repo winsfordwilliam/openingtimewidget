@@ -36,17 +36,12 @@ function openingTime(){
 function displayOpening(){
     $currentTime = strtotime(date("h:i"));
     $times = openingTime();
-    $opening = date("H:i",strtotime($times[0]['opening'])); 
-    $closing = date('H:i',strtotime($times[1]['closing']));
-sleep(5);
+    $opening = date("H:i",$times[0]['opening']); 
+    $closing = date('H:i',$times[1]['closing']);
     //open
-    try{
     if($currentTime >= $opening && $currentTime <= $closing){
-            return 'Open';
+            echo 'Open';
     }else{
-        return var_dump($opening, $closing, $currentTime);
-        }
-    }catch(Exception $e){
-        echo $e -> getMessage();
-    }
+        echo "Closed";
+}
 }
